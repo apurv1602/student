@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:student/src/features/authentication/model/user_model.dart';
 import 'package:student/src/repository/authentication_repository/authentication_repository.dart';
@@ -21,8 +22,10 @@ class ProfileController extends GetxController{
     }
   }
 
-  Future<List<UserModel>> getAllUser() async{
-    return await _userRepo.allUser();
+  Future<List<UserModel>> getAllUser() async =>  await _userRepo.allUser();
+
+  updateRecord(UserModel user) async{
+    await _userRepo.updateUserRecord(user);
   }
 
 }
